@@ -1,0 +1,29 @@
+### 1 Create a new resource
+POST http://localhost:3000/api/resources
+Content-Type: application/json
+
+{
+  "name": "New Resource",
+  "description": "This is a sample resource"
+}
+
+### 2️ List all resources
+GET http://localhost:3000/api/resources
+
+### 3️ Get resource details by ID
+# Replace `PUT_RESOURCE_ID_HERE` with the actual resource ID.
+GET http://localhost:3000/api/resources/PUT_RESOURCE_ID_HERE
+
+### 4️ Update a resource
+# Updates an existing resource by ID.
+PUT http://localhost:3000/api/resources/PUT_RESOURCE_ID_HERE
+Content-Type: application/json
+
+{
+  "name": "Updated Resource",
+  "description": "Updated description"
+}
+
+### 5️ Delete a resource
+# Deletes a resource by ID.
+DELETE http://localhost:3000/api/resources/PUT_RESOURCE_ID_HERE

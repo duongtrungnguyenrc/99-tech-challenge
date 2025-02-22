@@ -1,0 +1,22 @@
+1. Unused Variables (rest)
+rest is extracted from props but never used.
+
+2. Using any for blockchain Type
+- The getPriority function accepts any, which defeats TypeScript's type safety.
+- Should use an enumeration (enum) instead.
+
+3. Logical Error in sortedBalances Filtering
+- The filter function contains a reference to lhsPriority, which is undefined in this context.
+- It attempts to check if balance.amount <= 0 but incorrectly nests conditions, making the logic unclear.
+
+4. Sorting Function Without a Return Value
+- The sort function should return 0 when values are equal, ensuring a proper comparison.
+
+5. Inefficient Sorting Strategy
+- filter and sort should be merged into a single reduce operation to improve performance.
+
+6. Incorrect Type for formattedBalances
+- formattedBalances maps over sortedBalances but doesn’t explicitly convert it to FormattedWalletBalance.
+
+7. Unnecessary Double Mapping
+- The formattedBalances array is created but not used in rows, causing redundant computation.
